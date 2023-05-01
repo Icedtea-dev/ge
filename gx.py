@@ -1,33 +1,28 @@
-# import great_expectations as gx
+# Connect to data
+# validator = context.sources.pandas_default.read_csv(
+#     "test_data/tbl_product.csv"
+# )
+# # Create Expectations
+# validator.expect_column_values_to_not_be_null("name")
 
-# expect_column_values_to_be_of_type
+# # Validate data
+# checkpoint = gx.checkpoint.SimpleCheckpoint(
+#     name="my_quickstart_checkpoint",
+#     data_context=context,
+#     validator=validator,
+# )
 
-# expect_column_values_to_not_be_null 
+# checkpoint_result = checkpoint.run()
 
-# expect_column_values_to_be_in_type_list
+# View results
+# validation_result_identifier = checkpoint_result.list_validation_result_identifiers()[0]
+# context.open_data_docs(resource_identifier=validation_result_identifier)
 
 
-# importing pandas as pd
-import pandas as pd
+# my_connection_string = "postgresql+psycopg2://postgres:MesutOzil4$@datateam-dev-server.cdvgme4p63fk.us-east-1.rds.amazonaws.com:5432/postgres"
 
-# Creating the DataFrame
-df = pd.DataFrame({'Weight': [45, 88, 56, 15, 71],
-				'Name': ['Sam', 'Andrea', 'Alex', 'Robin', 'Kia'],
-				'Age': [14, 25, 55, 8, 21],
-                'time':["2022-03-16","2022-02-16","2022-05-16","2022-03-19","2022-03-21"]
-                })
+# datasource = context.get_datasource("postgres_datasource")
+# datasource = context.get_datasource("test_postgres")
+# datasource = context.sources.add_sql(name="test_postgres", connection_string=my_connection_string)
+# table_asset = datasource.add_table_asset(name="tblProduct_asset", table_name="tbl_product")
 
-# Create the index
-index_ = ['Row_1', 'Row_2', 'Row_3', 'Row_4', 'Row_5']
-
-# Set the index
-df.index = index_
-
-# Print the DataFrame
-# print(df)
-
-# return the dtype of each column
-result = df.dtypes.to_frame()
-
-# Print the result
-print(result)
