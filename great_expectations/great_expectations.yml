@@ -14,42 +14,67 @@ config_version: 3.0
 # You can use the CLI command `great_expectations datasource new` to help you
 # add a new datasource. Read more at https://docs.greatexpectations.io/docs/guides/connecting_to_your_data/connect_to_data_overview
 datasources:
-  postgres_datasource:
-    module_name: great_expectations.datasource
+  # postgres_datasource:
+  #   class_name: Datasource
+  #   data_connectors:
+  #     default_runtime_data_connector_name:
+  #       name: default_runtime_data_connector_name
+  #       batch_identifiers:
+  #         - default_identifier_name
+  #       class_name: RuntimeDataConnector
+  #       module_name: great_expectations.datasource.data_connector
+  #     default_inferred_data_connector_name:
+  #       name: default_inferred_data_connector_name
+  #       introspection_directives:
+  #         schema_name: public
+  #       class_name: InferredAssetSqlDataConnector
+  #       module_name: great_expectations.datasource.data_connector
+  #       include_schema_name: true
+  #     default_configured_data_connector_name:
+  #       name: default_configured_data_connector_name
+  #       assets:
+  #         tbl_product:
+  #           schema_name: public
+  #           class_name: Asset
+  #           module_name: great_expectations.datasource.data_connector.asset
+  #       class_name: ConfiguredAssetSqlDataConnector
+  #       module_name: great_expectations.datasource.data_connector
+  #   module_name: great_expectations.datasource
+  #   execution_engine:
+  #     class_name: SqlAlchemyExecutionEngine
+  #     credentials:
+  #       host: ${src_host}
+  #       port: '5432'
+  #       username: postgres
+  #       password: ${src_password}
+  #       database: postgres
+  #       drivername: postgresql
+  #     module_name: great_expectations.execution_engine
+  BigQuery_datasource:
     class_name: Datasource
-    execution_engine:
-      module_name: great_expectations.execution_engine
-      credentials:
-        host: ${src_host}
-        port: '5432'
-        username: postgres
-        password: ${src_password}
-        database: postgres
-        drivername: postgresql
-      class_name: SqlAlchemyExecutionEngine
     data_connectors:
       default_runtime_data_connector_name:
-        module_name: great_expectations.datasource.data_connector
+        name: default_runtime_data_connector_name
         batch_identifiers:
           - default_identifier_name
         class_name: RuntimeDataConnector
-        name: default_runtime_data_connector_name
+        module_name: great_expectations.datasource.data_connector
+        batch_spec_passthrough: 
+          create_temp_table: False
       default_inferred_data_connector_name:
-        module_name: great_expectations.datasource.data_connector
-        class_name: InferredAssetSqlDataConnector
         name: default_inferred_data_connector_name
-        include_schema_name: true
         introspection_directives:
-          schema_name: public
-      default_configured_data_connector_name:
+          schema_name: eprod_public
+        batch_spec_passthrough: 
+          create_temp_table: False
+        class_name: InferredAssetSqlDataConnector
         module_name: great_expectations.datasource.data_connector
-        class_name: ConfiguredAssetSqlDataConnector
-        assets:
-          tbl_product:
-            module_name: great_expectations.datasource.data_connector.asset
-            class_name: Asset
-            schema_name: public
-        name: default_configured_data_connector_name
+        include_schema_name: true
+    module_name: great_expectations.datasource
+    execution_engine:
+      class_name: SqlAlchemyExecutionEngine
+      connection_string: bigquery://${GCP_PROJECT}/${BIGQUERY_DATASET}
+      module_name: great_expectations.execution_engine
 config_variables_file_path: uncommitted/config_variables.yml
 
 # The plugins_directory will be added to your python path for custom modules
@@ -67,9 +92,6 @@ stores:
   expectations_postgres_store:
     class_name: ExpectationsStore
     store_backend:
-      # class_name: DatabaseStoreBackend
-      # credentials: ${db_creds}
-      
       #File system
       class_name: TupleFilesystemStoreBackend
       base_directory: expectations/
@@ -77,6 +99,9 @@ stores:
   validations_store:
     class_name: ValidationsStore
     store_backend:
+      # class_name: DatabaseStoreBackend
+      # credentials: ${db_creds}
+      #file system
       class_name: TupleFilesystemStoreBackend
       base_directory: uncommitted/validations/
 
@@ -106,11 +131,20 @@ data_docs_sites:
   # include Expectations, Validations & Profiles. The are built for all
   # Datasources from JSON artifacts in the local repo including validations &
   # profiles from the uncommitted directory. Read more at https://docs.greatexpectations.io/docs/terms/data_docs
-  local_site:
-    class_name: SiteBuilder
-    show_how_to_buttons: true
-    store_backend:
-      class_name: TupleFilesystemStoreBackend
-      base_directory: uncommitted/data_docs/local_site/
-    site_index_builder:
-      class_name: DefaultSiteIndexBuilder
+  # local_site:
+  #   class_name: SiteBuilder
+  #   show_how_to_buttons: true
+  #   store_backend:
+  #     class_name: TupleFilesystemStoreBackend
+  #     base_directory: uncommitted/data_docs/local_site/
+  #   site_index_builder:
+  #     class_name: DefaultSiteIndexBuilder
+  GC_app_site:
+      class_name: SiteBuilder
+      store_backend:
+        class_name: TupleGCSStoreBackend
+        project: ${app_hosting_project}
+        bucket: ${app_bucket}
+      site_index_builder:
+        class_name: DefaultSiteIndexBuilder
+

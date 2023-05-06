@@ -1,0 +1,3 @@
+runtime: python39
+env_variables:
+  CLOUD_STORAGE_BUCKET: gex_eproc_data_docs_test
