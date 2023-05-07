@@ -1,6 +1,6 @@
 {
   "data_asset_type": null,
-  "expectation_suite_name": "eproc_bq_expec_tbl_product",
+  "expectation_suite_name": "eproc_bq_expec_tbl_business_credit_score",
   "expectations": [
     {
       "expectation_type": "expect_column_values_to_be_unique",
@@ -15,23 +15,14 @@
       "kwargs": {
         "column": "id",
         "mostly": 1,
-        "type_": "INTEGER"
+        "type_": "STRING"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "category_id",
-        "mostly": 1,
-        "type_": "INTEGER"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "created_by",
+        "column": "credit_risk_assessment_id",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -40,7 +31,16 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "updated_by",
+        "column": "entity_type_id",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "entity_type",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -49,9 +49,27 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "deleted_at",
+        "column": "credit_limit",
         "mostly": 1,
-        "type_": "DATETIME"
+        "type_": "FLOAT"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "points",
+        "mostly": 1,
+        "type_": "FLOAT"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "points_in_percent",
+        "mostly": 1,
+        "type_": "FLOAT"
       },
       "meta": {}
     },
@@ -76,7 +94,34 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "performance_status",
+        "column": "deleted_at",
+        "mostly": 1,
+        "type_": "DATETIME"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "is_active",
+        "mostly": 1,
+        "type_": "BOOLEAN"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "available_credit_limit",
+        "mostly": 1,
+        "type_": "FLOAT"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "updated_by",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -85,43 +130,61 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "name",
+        "column": "is_restricted",
         "mostly": 1,
-        "type_": "STRING"
+        "type_": "BOOLEAN"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "code",
+        "column": "defaulting_days",
         "mostly": 1,
-        "type_": "STRING"
+        "type_": "INTEGER"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "image_url",
+        "column": "initial_defaulting_amount",
         "mostly": 1,
-        "type_": "STRING"
+        "type_": "FLOAT"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "description",
+        "column": "available_defaulting_amount",
         "mostly": 1,
-        "type_": "STRING"
+        "type_": "FLOAT"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "sub_category",
+        "column": "is_non_performing",
+        "mostly": 1,
+        "type_": "BOOLEAN"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "is_within_six_month",
+        "mostly": 1,
+        "type_": "BOOLEAN"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "restriction_note",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -132,18 +195,25 @@
       "kwargs": {
         "column_set": [
           "id",
-          "category_id",
-          "created_by",
-          "updated_by",
-          "deleted_at",
+          "credit_risk_assessment_id",
+          "entity_type_id",
+          "entity_type",
+          "credit_limit",
+          "points",
+          "points_in_percent",
           "created_at",
           "updated_at",
-          "performance_status",
-          "name",
-          "code",
-          "image_url",
-          "description",
-          "sub_category"
+          "deleted_at",
+          "is_active",
+          "available_credit_limit",
+          "updated_by",
+          "is_restricted",
+          "defaulting_days",
+          "initial_defaulting_amount",
+          "available_defaulting_amount",
+          "is_non_performing",
+          "is_within_six_month",
+          "restriction_note"
         ],
         "exact_match": true,
         "mostly": 1

@@ -1,0 +1,268 @@
+{
+  "data_asset_type": null,
+  "expectation_suite_name": "eproc_bq_expec_tbl_business_assessment_data",
+  "expectations": [
+    {
+      "expectation_type": "expect_column_values_to_be_unique",
+      "kwargs": {
+        "column": "id",
+        "mostly": 1
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "id",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "year_of_incorporation",
+        "mostly": 1,
+        "type_": "DATETIME"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "location",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "business_category",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "is_business_registered",
+        "mostly": 1,
+        "type_": "BOOLEAN"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "operation_in_other_cities",
+        "mostly": 1,
+        "type_": "BOOLEAN"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "operation_cities",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "entity_type",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "entity_type_id",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "created_by",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "updated_by",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "created_at",
+        "mostly": 1,
+        "type_": "DATETIME"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "updated_at",
+        "mostly": 1,
+        "type_": "DATETIME"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "deleted_at",
+        "mostly": 1,
+        "type_": "DATETIME"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "grade_data",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "tin_data",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "rcn_data",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "business_type",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "head_office_address",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "length_of_years_in_business",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "number_of_employees",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "business_name",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "tax_indentification_number",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "rc_number",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_table_columns_to_match_set",
+      "kwargs": {
+        "column_set": [
+          "id",
+          "year_of_incorporation",
+          "location",
+          "business_category",
+          "is_business_registered",
+          "operation_in_other_cities",
+          "operation_cities",
+          "entity_type",
+          "entity_type_id",
+          "created_by",
+          "updated_by",
+          "created_at",
+          "updated_at",
+          "deleted_at",
+          "grade_data",
+          "tin_data",
+          "rcn_data",
+          "business_type",
+          "head_office_address",
+          "length_of_years_in_business",
+          "number_of_employees",
+          "business_name",
+          "tax_indentification_number",
+          "rc_number"
+        ],
+        "exact_match": true,
+        "mostly": 1
+      },
+      "meta": {}
+    }
+  ],
+  "ge_cloud_id": null,
+  "meta": {
+    "great_expectations_version": "0.16.11"
+  }
+}

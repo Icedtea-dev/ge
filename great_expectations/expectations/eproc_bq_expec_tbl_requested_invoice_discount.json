@@ -1,48 +1,12 @@
 {
   "data_asset_type": null,
-  "expectation_suite_name": "eproc_bq_expec_tbl_city",
+  "expectation_suite_name": "eproc_bq_expec_tbl_requested_invoice_discount",
   "expectations": [
     {
       "expectation_type": "expect_column_values_to_be_unique",
       "kwargs": {
         "column": "id",
         "mostly": 1
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "id",
-        "mostly": 1,
-        "type_": "INTEGER"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "enabled",
-        "mostly": 1,
-        "type_": "BOOLEAN"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "state_id",
-        "mostly": 1,
-        "type_": "INTEGER"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "created_by",
-        "mostly": 1,
-        "type_": "STRING"
       },
       "meta": {}
     },
@@ -67,7 +31,16 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "name",
+        "column": "id",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "requester_id",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -76,7 +49,70 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "code",
+        "column": "invoice_id",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "status",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "declined_by",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "approved_by",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "requested_amount",
+        "mostly": 1,
+        "type_": "FLOAT"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "suggested_amount",
+        "mostly": 1,
+        "type_": "FLOAT"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "reason",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "approver_comment",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -86,14 +122,18 @@
       "expectation_type": "expect_table_columns_to_match_set",
       "kwargs": {
         "column_set": [
-          "id",
-          "enabled",
-          "state_id",
-          "created_by",
           "created_at",
           "updated_at",
-          "name",
-          "code"
+          "id",
+          "requester_id",
+          "invoice_id",
+          "status",
+          "declined_by",
+          "approved_by",
+          "requested_amount",
+          "suggested_amount",
+          "reason",
+          "approver_comment"
         ],
         "exact_match": true,
         "mostly": 1

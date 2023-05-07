@@ -1,6 +1,6 @@
 {
   "data_asset_type": null,
-  "expectation_suite_name": "eproc_bq_expec_tbl_city",
+  "expectation_suite_name": "eproc_bq_expec_tbl_system_resource_privilege_setup",
   "expectations": [
     {
       "expectation_type": "expect_column_values_to_be_unique",
@@ -22,7 +22,52 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "enabled",
+        "column": "create_privilege",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "read_privilege",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "update_privilege",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "delete_privilege",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "secondary_privileges",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "allow_system",
         "mostly": 1,
         "type_": "BOOLEAN"
       },
@@ -31,52 +76,25 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "state_id",
+        "column": "allow_company",
         "mostly": 1,
-        "type_": "INTEGER"
+        "type_": "BOOLEAN"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "created_by",
+        "column": "allow_supplier",
         "mostly": 1,
-        "type_": "STRING"
+        "type_": "BOOLEAN"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "created_at",
-        "mostly": 1,
-        "type_": "DATETIME"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "updated_at",
-        "mostly": 1,
-        "type_": "DATETIME"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "name",
-        "mostly": 1,
-        "type_": "STRING"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "code",
+        "column": "resource_name",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -87,13 +105,15 @@
       "kwargs": {
         "column_set": [
           "id",
-          "enabled",
-          "state_id",
-          "created_by",
-          "created_at",
-          "updated_at",
-          "name",
-          "code"
+          "create_privilege",
+          "read_privilege",
+          "update_privilege",
+          "delete_privilege",
+          "secondary_privileges",
+          "allow_system",
+          "allow_company",
+          "allow_supplier",
+          "resource_name"
         ],
         "exact_match": true,
         "mostly": 1

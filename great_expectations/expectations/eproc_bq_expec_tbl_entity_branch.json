@@ -1,6 +1,6 @@
 {
   "data_asset_type": null,
-  "expectation_suite_name": "eproc_bq_expec_tbl_product",
+  "expectation_suite_name": "eproc_bq_expec_tbl_entity_branch",
   "expectations": [
     {
       "expectation_type": "expect_column_values_to_be_unique",
@@ -22,7 +22,70 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "category_id",
+        "column": "country_id",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "address_breakdown_id",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "state_id",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "city_id",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "is_active",
+        "mostly": 1,
+        "type_": "BOOLEAN"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "is_headquarter",
+        "mostly": 1,
+        "type_": "BOOLEAN"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "entity_type",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "entity_type_id",
         "mostly": 1,
         "type_": "INTEGER"
       },
@@ -49,15 +112,6 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "deleted_at",
-        "mostly": 1,
-        "type_": "DATETIME"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
         "column": "created_at",
         "mostly": 1,
         "type_": "DATETIME"
@@ -76,9 +130,9 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "performance_status",
+        "column": "deleted_at",
         "mostly": 1,
-        "type_": "STRING"
+        "type_": "DATETIME"
       },
       "meta": {}
     },
@@ -103,25 +157,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "image_url",
-        "mostly": 1,
-        "type_": "STRING"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "description",
-        "mostly": 1,
-        "type_": "STRING"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "sub_category",
+        "column": "address",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -132,18 +168,22 @@
       "kwargs": {
         "column_set": [
           "id",
-          "category_id",
+          "country_id",
+          "address_breakdown_id",
+          "state_id",
+          "city_id",
+          "is_active",
+          "is_headquarter",
+          "entity_type",
+          "entity_type_id",
           "created_by",
           "updated_by",
-          "deleted_at",
           "created_at",
           "updated_at",
-          "performance_status",
+          "deleted_at",
           "name",
           "code",
-          "image_url",
-          "description",
-          "sub_category"
+          "address"
         ],
         "exact_match": true,
         "mostly": 1

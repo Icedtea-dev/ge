@@ -1,6 +1,6 @@
 {
   "data_asset_type": null,
-  "expectation_suite_name": "eproc_bq_expec_tbl_city",
+  "expectation_suite_name": "eproc_bq_expec_tbl_otp",
   "expectations": [
     {
       "expectation_type": "expect_column_values_to_be_unique",
@@ -15,14 +15,23 @@
       "kwargs": {
         "column": "id",
         "mostly": 1,
-        "type_": "INTEGER"
+        "type_": "STRING"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "enabled",
+        "column": "user_id",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "used",
         "mostly": 1,
         "type_": "BOOLEAN"
       },
@@ -31,18 +40,9 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "state_id",
+        "column": "expires_at",
         "mostly": 1,
-        "type_": "INTEGER"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "created_by",
-        "mostly": 1,
-        "type_": "STRING"
+        "type_": "DATETIME"
       },
       "meta": {}
     },
@@ -67,15 +67,6 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "name",
-        "mostly": 1,
-        "type_": "STRING"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
         "column": "code",
         "mostly": 1,
         "type_": "STRING"
@@ -87,12 +78,11 @@
       "kwargs": {
         "column_set": [
           "id",
-          "enabled",
-          "state_id",
-          "created_by",
+          "user_id",
+          "used",
+          "expires_at",
           "created_at",
           "updated_at",
-          "name",
           "code"
         ],
         "exact_match": true,

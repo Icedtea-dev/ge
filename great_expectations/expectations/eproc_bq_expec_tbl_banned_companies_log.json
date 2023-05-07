@@ -1,6 +1,6 @@
 {
   "data_asset_type": null,
-  "expectation_suite_name": "eproc_bq_expec_tbl_city",
+  "expectation_suite_name": "eproc_bq_expec_tbl_banned_companies_log",
   "expectations": [
     {
       "expectation_type": "expect_column_values_to_be_unique",
@@ -22,16 +22,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "enabled",
-        "mostly": 1,
-        "type_": "BOOLEAN"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "state_id",
+        "column": "company_id",
         "mostly": 1,
         "type_": "INTEGER"
       },
@@ -40,9 +31,72 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "created_by",
+        "column": "defaulted_invoice_id",
         "mostly": 1,
-        "type_": "STRING"
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "banned_start_date",
+        "mostly": 1,
+        "type_": "DATETIME"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "banned_end_date",
+        "mostly": 1,
+        "type_": "DATETIME"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "banned_days",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "unban_date",
+        "mostly": 1,
+        "type_": "DATETIME"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "banned",
+        "mostly": 1,
+        "type_": "BOOLEAN"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "defaulted_invoice_days",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "defaulted_invoice_paid_date",
+        "mostly": 1,
+        "type_": "DATETIME"
       },
       "meta": {}
     },
@@ -67,16 +121,16 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "name",
+        "column": "deleted_at",
         "mostly": 1,
-        "type_": "STRING"
+        "type_": "DATETIME"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "code",
+        "column": "defaulted_invoice_code",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -87,13 +141,19 @@
       "kwargs": {
         "column_set": [
           "id",
-          "enabled",
-          "state_id",
-          "created_by",
+          "company_id",
+          "defaulted_invoice_id",
+          "banned_start_date",
+          "banned_end_date",
+          "banned_days",
+          "unban_date",
+          "banned",
+          "defaulted_invoice_days",
+          "defaulted_invoice_paid_date",
           "created_at",
           "updated_at",
-          "name",
-          "code"
+          "deleted_at",
+          "defaulted_invoice_code"
         ],
         "exact_match": true,
         "mostly": 1

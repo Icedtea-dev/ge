@@ -1,6 +1,6 @@
 {
   "data_asset_type": null,
-  "expectation_suite_name": "eproc_bq_expec_tbl_city",
+  "expectation_suite_name": "eproc_bq_expec_tbl_goods_received_note_item",
   "expectations": [
     {
       "expectation_type": "expect_column_values_to_be_unique",
@@ -13,6 +13,15 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
+        "column": "updated_at",
+        "mostly": 1,
+        "type_": "DATETIME"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
         "column": "id",
         "mostly": 1,
         "type_": "INTEGER"
@@ -22,16 +31,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "enabled",
-        "mostly": 1,
-        "type_": "BOOLEAN"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "state_id",
+        "column": "purchase_order_item_id",
         "mostly": 1,
         "type_": "INTEGER"
       },
@@ -40,7 +40,61 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "created_by",
+        "column": "goods_received_note_id",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "is_rejected",
+        "mostly": 1,
+        "type_": "BOOLEAN"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "total_quantity",
+        "mostly": 1,
+        "type_": "FLOAT"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "quantity_delivered",
+        "mostly": 1,
+        "type_": "FLOAT"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "quantity_received",
+        "mostly": 1,
+        "type_": "FLOAT"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "quantity_rejected",
+        "mostly": 1,
+        "type_": "FLOAT"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "status",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -58,16 +112,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "updated_at",
-        "mostly": 1,
-        "type_": "DATETIME"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "name",
+        "column": "note",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -76,7 +121,16 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "code",
+        "column": "product_name",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "uom",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -86,14 +140,20 @@
       "expectation_type": "expect_table_columns_to_match_set",
       "kwargs": {
         "column_set": [
-          "id",
-          "enabled",
-          "state_id",
-          "created_by",
-          "created_at",
           "updated_at",
-          "name",
-          "code"
+          "id",
+          "purchase_order_item_id",
+          "goods_received_note_id",
+          "is_rejected",
+          "total_quantity",
+          "quantity_delivered",
+          "quantity_received",
+          "quantity_rejected",
+          "status",
+          "created_at",
+          "note",
+          "product_name",
+          "uom"
         ],
         "exact_match": true,
         "mostly": 1

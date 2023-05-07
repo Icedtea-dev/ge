@@ -1,6 +1,6 @@
 {
   "data_asset_type": null,
-  "expectation_suite_name": "eproc_bq_expec_tbl_city",
+  "expectation_suite_name": "eproc_bq_expec_tbl_forager_team",
   "expectations": [
     {
       "expectation_type": "expect_column_values_to_be_unique",
@@ -22,9 +22,18 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "enabled",
+        "column": "is_active",
         "mostly": 1,
         "type_": "BOOLEAN"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "country_id",
+        "mostly": 1,
+        "type_": "INTEGER"
       },
       "meta": {}
     },
@@ -40,7 +49,25 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
+        "column": "city_id",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
         "column": "created_by",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "updated_by",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -67,6 +94,15 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
+        "column": "is_pickup",
+        "mostly": 1,
+        "type_": "BOOLEAN"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
         "column": "name",
         "mostly": 1,
         "type_": "STRING"
@@ -76,7 +112,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "code",
+        "column": "description",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -87,13 +123,17 @@
       "kwargs": {
         "column_set": [
           "id",
-          "enabled",
+          "is_active",
+          "country_id",
           "state_id",
+          "city_id",
           "created_by",
+          "updated_by",
           "created_at",
           "updated_at",
+          "is_pickup",
           "name",
-          "code"
+          "description"
         ],
         "exact_match": true,
         "mostly": 1

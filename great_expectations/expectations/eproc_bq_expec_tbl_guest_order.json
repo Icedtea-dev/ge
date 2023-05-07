@@ -1,6 +1,6 @@
 {
   "data_asset_type": null,
-  "expectation_suite_name": "eproc_bq_expec_tbl_city",
+  "expectation_suite_name": "eproc_bq_expec_tbl_guest_order",
   "expectations": [
     {
       "expectation_type": "expect_column_values_to_be_unique",
@@ -22,25 +22,25 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "enabled",
+        "column": "total_amount",
         "mostly": 1,
-        "type_": "BOOLEAN"
+        "type_": "FLOAT"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "state_id",
+        "column": "delivery_expected_at",
         "mostly": 1,
-        "type_": "INTEGER"
+        "type_": "DATETIME"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "created_by",
+        "column": "user",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -67,7 +67,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "name",
+        "column": "code",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -76,7 +76,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "code",
+        "column": "comment",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -87,13 +87,13 @@
       "kwargs": {
         "column_set": [
           "id",
-          "enabled",
-          "state_id",
-          "created_by",
+          "total_amount",
+          "delivery_expected_at",
+          "user",
           "created_at",
           "updated_at",
-          "name",
-          "code"
+          "code",
+          "comment"
         ],
         "exact_match": true,
         "mostly": 1

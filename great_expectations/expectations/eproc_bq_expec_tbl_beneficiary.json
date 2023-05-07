@@ -1,6 +1,6 @@
 {
   "data_asset_type": null,
-  "expectation_suite_name": "eproc_bq_expec_tbl_product",
+  "expectation_suite_name": "eproc_bq_expec_tbl_beneficiary",
   "expectations": [
     {
       "expectation_type": "expect_column_values_to_be_unique",
@@ -15,23 +15,14 @@
       "kwargs": {
         "column": "id",
         "mostly": 1,
-        "type_": "INTEGER"
+        "type_": "STRING"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "category_id",
-        "mostly": 1,
-        "type_": "INTEGER"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "created_by",
+        "column": "user_id",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -40,7 +31,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "updated_by",
+        "column": "entity_type",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -49,9 +40,9 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "deleted_at",
+        "column": "entity_type_id",
         "mostly": 1,
-        "type_": "DATETIME"
+        "type_": "INTEGER"
       },
       "meta": {}
     },
@@ -76,7 +67,25 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "performance_status",
+        "column": "deleted_at",
+        "mostly": 1,
+        "type_": "DATETIME"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "active",
+        "mostly": 1,
+        "type_": "BOOLEAN"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "account_number",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -85,7 +94,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "name",
+        "column": "bank_code",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -94,7 +103,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "code",
+        "column": "bank_name",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -103,7 +112,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "image_url",
+        "column": "gateway",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -112,7 +121,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "description",
+        "column": "gateway_id",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -121,7 +130,16 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "sub_category",
+        "column": "account_name",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "currency",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -132,18 +150,20 @@
       "kwargs": {
         "column_set": [
           "id",
-          "category_id",
-          "created_by",
-          "updated_by",
-          "deleted_at",
+          "user_id",
+          "entity_type",
+          "entity_type_id",
           "created_at",
           "updated_at",
-          "performance_status",
-          "name",
-          "code",
-          "image_url",
-          "description",
-          "sub_category"
+          "deleted_at",
+          "active",
+          "account_number",
+          "bank_code",
+          "bank_name",
+          "gateway",
+          "gateway_id",
+          "account_name",
+          "currency"
         ],
         "exact_match": true,
         "mostly": 1

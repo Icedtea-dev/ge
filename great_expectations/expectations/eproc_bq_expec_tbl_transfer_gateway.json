@@ -1,6 +1,6 @@
 {
   "data_asset_type": null,
-  "expectation_suite_name": "eproc_bq_expec_tbl_city",
+  "expectation_suite_name": "eproc_bq_expec_tbl_transfer_gateway",
   "expectations": [
     {
       "expectation_type": "expect_column_values_to_be_unique",
@@ -22,16 +22,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "enabled",
-        "mostly": 1,
-        "type_": "BOOLEAN"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "state_id",
+        "column": "country_id",
         "mostly": 1,
         "type_": "INTEGER"
       },
@@ -40,9 +31,9 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "created_by",
+        "column": "active",
         "mostly": 1,
-        "type_": "STRING"
+        "type_": "BOOLEAN"
       },
       "meta": {}
     },
@@ -74,26 +65,15 @@
       "meta": {}
     },
     {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "code",
-        "mostly": 1,
-        "type_": "STRING"
-      },
-      "meta": {}
-    },
-    {
       "expectation_type": "expect_table_columns_to_match_set",
       "kwargs": {
         "column_set": [
           "id",
-          "enabled",
-          "state_id",
-          "created_by",
+          "country_id",
+          "active",
           "created_at",
           "updated_at",
-          "name",
-          "code"
+          "name"
         ],
         "exact_match": true,
         "mostly": 1

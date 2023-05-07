@@ -1,6 +1,6 @@
 {
   "data_asset_type": null,
-  "expectation_suite_name": "eproc_bq_expec_tbl_city",
+  "expectation_suite_name": "eproc_bq_expec_tbl_business_bank_account",
   "expectations": [
     {
       "expectation_type": "expect_column_values_to_be_unique",
@@ -15,34 +15,25 @@
       "kwargs": {
         "column": "id",
         "mostly": 1,
-        "type_": "INTEGER"
+        "type_": "STRING"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "enabled",
-        "mostly": 1,
-        "type_": "BOOLEAN"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "state_id",
-        "mostly": 1,
-        "type_": "INTEGER"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "created_by",
+        "column": "entity_type",
         "mostly": 1,
         "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "entity_type_id",
+        "mostly": 1,
+        "type_": "INTEGER"
       },
       "meta": {}
     },
@@ -67,7 +58,16 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "name",
+        "column": "deleted_at",
+        "mostly": 1,
+        "type_": "DATETIME"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "bank_data",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -76,7 +76,34 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "code",
+        "column": "account_name",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "account_number",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "bank_code",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "bank_name",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -87,13 +114,16 @@
       "kwargs": {
         "column_set": [
           "id",
-          "enabled",
-          "state_id",
-          "created_by",
+          "entity_type",
+          "entity_type_id",
           "created_at",
           "updated_at",
-          "name",
-          "code"
+          "deleted_at",
+          "bank_data",
+          "account_name",
+          "account_number",
+          "bank_code",
+          "bank_name"
         ],
         "exact_match": true,
         "mostly": 1

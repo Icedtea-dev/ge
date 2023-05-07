@@ -1,6 +1,6 @@
 {
   "data_asset_type": null,
-  "expectation_suite_name": "eproc_bq_expec_tbl_city",
+  "expectation_suite_name": "eproc_bq_expec_tbl_claim",
   "expectations": [
     {
       "expectation_type": "expect_column_values_to_be_unique",
@@ -22,18 +22,9 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "enabled",
+        "column": "status",
         "mostly": 1,
-        "type_": "BOOLEAN"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "state_id",
-        "mostly": 1,
-        "type_": "INTEGER"
+        "type_": "STRING"
       },
       "meta": {}
     },
@@ -58,6 +49,51 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
+        "column": "payment_id",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "entity_type",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "entity_type_id",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "updated_by",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "closed_by",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
         "column": "updated_at",
         "mostly": 1,
         "type_": "DATETIME"
@@ -67,9 +103,18 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "name",
+        "column": "closed_at",
         "mostly": 1,
-        "type_": "STRING"
+        "type_": "DATETIME"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "company_branch_id",
+        "mostly": 1,
+        "type_": "INTEGER"
       },
       "meta": {}
     },
@@ -83,17 +128,32 @@
       "meta": {}
     },
     {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "title",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
       "expectation_type": "expect_table_columns_to_match_set",
       "kwargs": {
         "column_set": [
           "id",
-          "enabled",
-          "state_id",
+          "status",
           "created_by",
           "created_at",
+          "payment_id",
+          "entity_type",
+          "entity_type_id",
+          "updated_by",
+          "closed_by",
           "updated_at",
-          "name",
-          "code"
+          "closed_at",
+          "company_branch_id",
+          "code",
+          "title"
         ],
         "exact_match": true,
         "mostly": 1

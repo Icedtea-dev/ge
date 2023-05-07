@@ -33,6 +33,370 @@ runtime_configuration: {}
 validations:
 - batch_request:
     datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_address_breakdown
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_address_breakdown
+  expectation_suite_name: eproc_bq_expec_tbl_address_breakdown
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_audit_trail
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_audit_trail
+  expectation_suite_name: eproc_bq_expec_tbl_audit_trail
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_bank_code
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_bank_code
+  expectation_suite_name: eproc_bq_expec_tbl_bank_code
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_banned_companies_log
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_banned_companies_log
+  expectation_suite_name: eproc_bq_expec_tbl_banned_companies_log
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_beneficiary
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_beneficiary
+  expectation_suite_name: eproc_bq_expec_tbl_beneficiary
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_business_assessment_data
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_business_assessment_data
+  expectation_suite_name: eproc_bq_expec_tbl_business_assessment_data
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_business_bank_account
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_business_bank_account
+  expectation_suite_name: eproc_bq_expec_tbl_business_bank_account
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_business_credit_risk
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_business_credit_risk
+  expectation_suite_name: eproc_bq_expec_tbl_business_credit_risk
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_business_credit_score
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_business_credit_score
+  expectation_suite_name: eproc_bq_expec_tbl_business_credit_score
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_business_director
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_business_director
+  expectation_suite_name: eproc_bq_expec_tbl_business_director
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_bvn_data
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_bvn_data
+  expectation_suite_name: eproc_bq_expec_tbl_bvn_data
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_cart_items
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_cart_items
+  expectation_suite_name: eproc_bq_expec_tbl_cart_items
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_carts
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_carts
+  expectation_suite_name: eproc_bq_expec_tbl_carts
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_city
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_city
+  expectation_suite_name: eproc_bq_expec_tbl_city
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_claim
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_claim
+  expectation_suite_name: eproc_bq_expec_tbl_claim
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_claim_message
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_claim_message
+  expectation_suite_name: eproc_bq_expec_tbl_claim_message
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_company
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_company
+  expectation_suite_name: eproc_bq_expec_tbl_company
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_company_category
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_company_category
+  expectation_suite_name: eproc_bq_expec_tbl_company_category
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_conversation
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_conversation
+  expectation_suite_name: eproc_bq_expec_tbl_conversation
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_conversation_message
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_conversation_message
+  expectation_suite_name: eproc_bq_expec_tbl_conversation_message
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_country
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_country
+  expectation_suite_name: eproc_bq_expec_tbl_country
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_country_invoice_charge
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_country_invoice_charge
+  expectation_suite_name: eproc_bq_expec_tbl_country_invoice_charge
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_credit_bureau
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_credit_bureau
+  expectation_suite_name: eproc_bq_expec_tbl_credit_bureau
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_delivery
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_delivery
+  expectation_suite_name: eproc_bq_expec_tbl_delivery
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_direct_debit
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_direct_debit
+  expectation_suite_name: eproc_bq_expec_tbl_direct_debit
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_direct_debit_log
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_direct_debit_log
+  expectation_suite_name: eproc_bq_expec_tbl_direct_debit_log
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_draft
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_draft
+  expectation_suite_name: eproc_bq_expec_tbl_draft
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_email_notification_users
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_email_notification_users
+  expectation_suite_name: eproc_bq_expec_tbl_email_notification_users
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_email_verify_token
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_email_verify_token
+  expectation_suite_name: eproc_bq_expec_tbl_email_verify_token
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_entity_branch
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_entity_branch
+  expectation_suite_name: eproc_bq_expec_tbl_entity_branch
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_entity_branch_user
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_entity_branch_user
+  expectation_suite_name: eproc_bq_expec_tbl_entity_branch_user
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_faq
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_faq
+  expectation_suite_name: eproc_bq_expec_tbl_faq
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_favourite_product
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_favourite_product
+  expectation_suite_name: eproc_bq_expec_tbl_favourite_product
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_forager_team
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_forager_team
+  expectation_suite_name: eproc_bq_expec_tbl_forager_team
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_forager_team_member
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_forager_team_member
+  expectation_suite_name: eproc_bq_expec_tbl_forager_team_member
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_goods_received_note
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_goods_received_note
+  expectation_suite_name: eproc_bq_expec_tbl_goods_received_note
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_goods_received_note_item
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_goods_received_note_item
+  expectation_suite_name: eproc_bq_expec_tbl_goods_received_note_item
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_guest_order
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_guest_order
+  expectation_suite_name: eproc_bq_expec_tbl_guest_order
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_guest_order_item
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_guest_order_item
+  expectation_suite_name: eproc_bq_expec_tbl_guest_order_item
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_invoice
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_invoice
+  expectation_suite_name: eproc_bq_expec_tbl_invoice
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_invoice_item
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_invoice_item
+  expectation_suite_name: eproc_bq_expec_tbl_invoice_item
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_invoice_miscellaneous
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_invoice_miscellaneous
+  expectation_suite_name: eproc_bq_expec_tbl_invoice_miscellaneous
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_invoice_shipping_addresses
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_invoice_shipping_addresses
+  expectation_suite_name: eproc_bq_expec_tbl_invoice_shipping_addresses
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_lga
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_lga
+  expectation_suite_name: eproc_bq_expec_tbl_lga
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_location_filter
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_location_filter
+  expectation_suite_name: eproc_bq_expec_tbl_location_filter
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_miscellaneous
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_miscellaneous
+  expectation_suite_name: eproc_bq_expec_tbl_miscellaneous
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_otp
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_otp
+  expectation_suite_name: eproc_bq_expec_tbl_otp
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_password_reset_token
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_password_reset_token
+  expectation_suite_name: eproc_bq_expec_tbl_password_reset_token
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_payment_data
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_payment_data
+  expectation_suite_name: eproc_bq_expec_tbl_payment_data
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_payment_request
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_payment_request
+  expectation_suite_name: eproc_bq_expec_tbl_payment_request
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_payment_request_category
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_payment_request_category
+  expectation_suite_name: eproc_bq_expec_tbl_payment_request_category
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_pickup_source
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_pickup_source
+  expectation_suite_name: eproc_bq_expec_tbl_pickup_source
+- batch_request:
+    datasource_name: BigQuery_datasource
     data_connector_name: default_runtime_data_connector_name
     data_asset_name: eprod_public.tbl_product
     runtime_parameters:
@@ -51,10 +415,220 @@ validations:
 - batch_request:
     datasource_name: BigQuery_datasource
     data_connector_name: default_inferred_data_connector_name
-    data_asset_name: eprod_public.tbl_city
+    data_asset_name: eprod_public.tbl_product_category
     batch_spec_passthrough:
-      name: batch_request_for_tbl_city
-  expectation_suite_name: eproc_bq_expec_tbl_city
+      name: batch_request_for_tbl_product_category
+  expectation_suite_name: eproc_bq_expec_tbl_product_category
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_product_location
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_product_location
+  expectation_suite_name: eproc_bq_expec_tbl_product_location
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_product_price_trends
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_product_price_trends
+  expectation_suite_name: eproc_bq_expec_tbl_product_price_trends
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_purchase_order
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_purchase_order
+  expectation_suite_name: eproc_bq_expec_tbl_purchase_order
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_purchase_order_item
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_purchase_order_item
+  expectation_suite_name: eproc_bq_expec_tbl_purchase_order_item
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_request_kyc_update
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_request_kyc_update
+  expectation_suite_name: eproc_bq_expec_tbl_request_kyc_update
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_requested_invoice_discount
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_requested_invoice_discount
+  expectation_suite_name: eproc_bq_expec_tbl_requested_invoice_discount
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_requested_product
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_requested_product
+  expectation_suite_name: eproc_bq_expec_tbl_requested_product
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_role
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_role
+  expectation_suite_name: eproc_bq_expec_tbl_role
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_role_system_resource_privilege
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_role_system_resource_privilege
+  expectation_suite_name: eproc_bq_expec_tbl_role_system_resource_privilege
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_scheduled_payment
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_scheduled_payment
+  expectation_suite_name: eproc_bq_expec_tbl_scheduled_payment
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_scheduled_payment_log
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_scheduled_payment_log
+  expectation_suite_name: eproc_bq_expec_tbl_scheduled_payment_log
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_shipping_addresses
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_shipping_addresses
+  expectation_suite_name: eproc_bq_expec_tbl_shipping_addresses
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_slack_notifications
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_slack_notifications
+  expectation_suite_name: eproc_bq_expec_tbl_slack_notifications
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_state
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_state
+  expectation_suite_name: eproc_bq_expec_tbl_state
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_supplier
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_supplier
+  expectation_suite_name: eproc_bq_expec_tbl_supplier
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_supplier_category
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_supplier_category
+  expectation_suite_name: eproc_bq_expec_tbl_supplier_category
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_system_department
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_system_department
+  expectation_suite_name: eproc_bq_expec_tbl_system_department
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_system_resource_privilege_setup
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_system_resource_privilege_setup
+  expectation_suite_name: eproc_bq_expec_tbl_system_resource_privilege_setup
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_system_user_account_managed
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_system_user_account_managed
+  expectation_suite_name: eproc_bq_expec_tbl_system_user_account_managed
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_system_user_city
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_system_user_city
+  expectation_suite_name: eproc_bq_expec_tbl_system_user_city
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_system_user_department
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_system_user_department
+  expectation_suite_name: eproc_bq_expec_tbl_system_user_department
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_transaction
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_transaction
+  expectation_suite_name: eproc_bq_expec_tbl_transaction
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_transaction_flow
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_transaction_flow
+  expectation_suite_name: eproc_bq_expec_tbl_transaction_flow
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_transfer_favorite
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_transfer_favorite
+  expectation_suite_name: eproc_bq_expec_tbl_transfer_favorite
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_transfer_gateway
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_transfer_gateway
+  expectation_suite_name: eproc_bq_expec_tbl_transfer_gateway
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_transfer_request
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_transfer_request
+  expectation_suite_name: eproc_bq_expec_tbl_transfer_request
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_uom_setup
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_uom_setup
+  expectation_suite_name: eproc_bq_expec_tbl_uom_setup
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_user
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_user
+  expectation_suite_name: eproc_bq_expec_tbl_user
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_wallet
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_wallet
+  expectation_suite_name: eproc_bq_expec_tbl_wallet
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_wards
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_wards
+  expectation_suite_name: eproc_bq_expec_tbl_wards
 profilers: []
 ge_cloud_id:
 expectation_suite_ge_cloud_id:

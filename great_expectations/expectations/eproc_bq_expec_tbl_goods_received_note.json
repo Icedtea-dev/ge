@@ -1,6 +1,6 @@
 {
   "data_asset_type": null,
-  "expectation_suite_name": "eproc_bq_expec_tbl_city",
+  "expectation_suite_name": "eproc_bq_expec_tbl_goods_received_note",
   "expectations": [
     {
       "expectation_type": "expect_column_values_to_be_unique",
@@ -22,16 +22,16 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "enabled",
+        "column": "delivery_id",
         "mostly": 1,
-        "type_": "BOOLEAN"
+        "type_": "INTEGER"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "state_id",
+        "column": "company_branch_id",
         "mostly": 1,
         "type_": "INTEGER"
       },
@@ -67,7 +67,16 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "name",
+        "column": "parent_goods_received_note_id",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "attachments",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -76,7 +85,16 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "code",
+        "column": "note",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "received_by",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -87,13 +105,15 @@
       "kwargs": {
         "column_set": [
           "id",
-          "enabled",
-          "state_id",
+          "delivery_id",
+          "company_branch_id",
           "created_by",
           "created_at",
           "updated_at",
-          "name",
-          "code"
+          "parent_goods_received_note_id",
+          "attachments",
+          "note",
+          "received_by"
         ],
         "exact_match": true,
         "mostly": 1

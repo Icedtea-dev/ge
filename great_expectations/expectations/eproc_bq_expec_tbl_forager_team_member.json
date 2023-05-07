@@ -1,6 +1,6 @@
 {
   "data_asset_type": null,
-  "expectation_suite_name": "eproc_bq_expec_tbl_city",
+  "expectation_suite_name": "eproc_bq_expec_tbl_forager_team_member",
   "expectations": [
     {
       "expectation_type": "expect_column_values_to_be_unique",
@@ -22,16 +22,16 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "enabled",
+        "column": "user_id",
         "mostly": 1,
-        "type_": "BOOLEAN"
+        "type_": "STRING"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "state_id",
+        "column": "forager_team_id",
         "mostly": 1,
         "type_": "INTEGER"
       },
@@ -40,16 +40,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "created_by",
-        "mostly": 1,
-        "type_": "STRING"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "created_at",
+        "column": "assigned_at",
         "mostly": 1,
         "type_": "DATETIME"
       },
@@ -58,16 +49,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "updated_at",
-        "mostly": 1,
-        "type_": "DATETIME"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "name",
+        "column": "assigned_by",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -76,9 +58,9 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "code",
+        "column": "is_team_lead",
         "mostly": 1,
-        "type_": "STRING"
+        "type_": "BOOLEAN"
       },
       "meta": {}
     },
@@ -87,13 +69,11 @@
       "kwargs": {
         "column_set": [
           "id",
-          "enabled",
-          "state_id",
-          "created_by",
-          "created_at",
-          "updated_at",
-          "name",
-          "code"
+          "user_id",
+          "forager_team_id",
+          "assigned_at",
+          "assigned_by",
+          "is_team_lead"
         ],
         "exact_match": true,
         "mostly": 1

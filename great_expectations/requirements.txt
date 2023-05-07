@@ -1,0 +1,6 @@
+great_expectations
+psycopg2
+ruamel.yaml
+urllib3==1.26.15
+great_expectations[gcp]
+

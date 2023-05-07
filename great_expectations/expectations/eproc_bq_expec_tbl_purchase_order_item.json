@@ -1,6 +1,6 @@
 {
   "data_asset_type": null,
-  "expectation_suite_name": "eproc_bq_expec_tbl_product",
+  "expectation_suite_name": "eproc_bq_expec_tbl_purchase_order_item",
   "expectations": [
     {
       "expectation_type": "expect_column_values_to_be_unique",
@@ -22,7 +22,79 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
+        "column": "is_assigned",
+        "mostly": 1,
+        "type_": "BOOLEAN"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "is_delivered",
+        "mostly": 1,
+        "type_": "BOOLEAN"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
         "column": "category_id",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "uom",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "quantity",
+        "mostly": 1,
+        "type_": "FLOAT"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "discount",
+        "mostly": 1,
+        "type_": "FLOAT"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "new_supplier_price",
+        "mostly": 1,
+        "type_": "FLOAT"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "product_id",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "purchase_order_id",
         "mostly": 1,
         "type_": "INTEGER"
       },
@@ -49,15 +121,6 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "deleted_at",
-        "mostly": 1,
-        "type_": "DATETIME"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
         "column": "created_at",
         "mostly": 1,
         "type_": "DATETIME"
@@ -76,7 +139,25 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "performance_status",
+        "column": "parent_order_item_id",
+        "mostly": 1,
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "sub_category",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "comment",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -94,7 +175,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "code",
+        "column": "description",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -110,40 +191,29 @@
       "meta": {}
     },
     {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "description",
-        "mostly": 1,
-        "type_": "STRING"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_of_type",
-      "kwargs": {
-        "column": "sub_category",
-        "mostly": 1,
-        "type_": "STRING"
-      },
-      "meta": {}
-    },
-    {
       "expectation_type": "expect_table_columns_to_match_set",
       "kwargs": {
         "column_set": [
           "id",
+          "is_assigned",
+          "is_delivered",
           "category_id",
+          "uom",
+          "quantity",
+          "discount",
+          "new_supplier_price",
+          "product_id",
+          "purchase_order_id",
           "created_by",
           "updated_by",
-          "deleted_at",
           "created_at",
           "updated_at",
-          "performance_status",
+          "parent_order_item_id",
+          "sub_category",
+          "comment",
           "name",
-          "code",
-          "image_url",
           "description",
-          "sub_category"
+          "image_url"
         ],
         "exact_match": true,
         "mostly": 1

@@ -1,6 +1,6 @@
 {
   "data_asset_type": null,
-  "expectation_suite_name": "eproc_bq_expec_tbl_product",
+  "expectation_suite_name": "eproc_bq_expec_tbl_purchase_order",
   "expectations": [
     {
       "expectation_type": "expect_column_values_to_be_unique",
@@ -22,9 +22,63 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "category_id",
+        "column": "status",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "total_amount",
+        "mostly": 1,
+        "type_": "FLOAT"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "accept_delivery",
+        "mostly": 1,
+        "type_": "BOOLEAN"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "delivery_expected_at",
+        "mostly": 1,
+        "type_": "DATETIME"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "company_branch_id",
         "mostly": 1,
         "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "approved_by",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "cancelled_by",
+        "mostly": 1,
+        "type_": "STRING"
       },
       "meta": {}
     },
@@ -49,7 +103,16 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "deleted_at",
+        "column": "approved_at",
+        "mostly": 1,
+        "type_": "DATETIME"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "cancelled_at",
         "mostly": 1,
         "type_": "DATETIME"
       },
@@ -76,7 +139,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "performance_status",
+        "column": "type",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -85,9 +148,18 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "name",
+        "column": "parent_order_id",
         "mostly": 1,
-        "type_": "STRING"
+        "type_": "INTEGER"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "deleted_at",
+        "mostly": 1,
+        "type_": "DATETIME"
       },
       "meta": {}
     },
@@ -103,7 +175,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "image_url",
+        "column": "delivery_address",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -112,7 +184,7 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "description",
+        "column": "comment",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -121,7 +193,16 @@
     {
       "expectation_type": "expect_column_values_to_be_of_type",
       "kwargs": {
-        "column": "sub_category",
+        "column": "purchase_order_tag",
+        "mostly": 1,
+        "type_": "STRING"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "cancelled_comment",
         "mostly": 1,
         "type_": "STRING"
       },
@@ -132,18 +213,27 @@
       "kwargs": {
         "column_set": [
           "id",
-          "category_id",
+          "status",
+          "total_amount",
+          "accept_delivery",
+          "delivery_expected_at",
+          "company_branch_id",
+          "approved_by",
+          "cancelled_by",
           "created_by",
           "updated_by",
-          "deleted_at",
+          "approved_at",
+          "cancelled_at",
           "created_at",
           "updated_at",
-          "performance_status",
-          "name",
+          "type",
+          "parent_order_id",
+          "deleted_at",
           "code",
-          "image_url",
-          "description",
-          "sub_category"
+          "delivery_address",
+          "comment",
+          "purchase_order_tag",
+          "cancelled_comment"
         ],
         "exact_match": true,
         "mostly": 1
