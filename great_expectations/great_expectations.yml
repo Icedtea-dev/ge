@@ -139,12 +139,12 @@ data_docs_sites:
   #     base_directory: uncommitted/data_docs/local_site/
   #   site_index_builder:
   #     class_name: DefaultSiteIndexBuilder
-  GC_app_site:
-      class_name: SiteBuilder
-      store_backend:
-        class_name: TupleGCSStoreBackend
-        project: ${app_hosting_project}
-        bucket: ${app_bucket}
-      site_index_builder:
-        class_name: DefaultSiteIndexBuilder
+  gpc_app_site:
+    class_name: SiteBuilder
+    store_backend:
+      class_name: TupleGCSStoreBackend
+      project: ${app_hosting_project}
+      bucket: ${app_bucket}
+    site_index_builder:
+      class_name: DefaultSiteIndexBuilder
 

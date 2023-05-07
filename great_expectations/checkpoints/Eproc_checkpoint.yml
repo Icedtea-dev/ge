@@ -7,52 +7,54 @@ run_name_template: '%Y%m%d-%H%M%S-my-run-name-template'
 expectation_suite_name:
 batch_request: {}
 action_list:
-  - name: store_validation_result
-    action:
-      class_name: StoreValidationResultAction
-  - name: store_evaluation_params
-    action:
-      class_name: StoreEvaluationParametersAction
-  - name: update_data_docs
-    action:
-      class_name: UpdateDataDocsAction
-      site_names: []
-  - name: send_slack_notification_on_validation_result
-    action:
-      class_name: SlackNotificationAction
-      slack_webhook: ${validation_notification_slack_webhook}
-      notify_on: failure # possible values: "all", "failure", "success"
-      notify_with: # optional list containing the DataDocs sites to include in the notification. Defaults to including links to all configured sites.
-      renderer:
-        module_name: great_expectations.render.renderer.slack_renderer
-        class_name: SlackRenderer
+- name: store_validation_result
+  action:
+    class_name: StoreValidationResultAction
+- name: store_evaluation_params
+  action:
+    class_name: StoreEvaluationParametersAction
+- name: update_data_docs
+  action:
+    class_name: UpdateDataDocsAction
+    site_names:
+    - gpc_app_site
+- name: send_slack_notification_on_validation_result
+  action:
+    class_name: SlackNotificationAction
+    slack_webhook: ${validation_notification_slack_webhook}
+    notify_on: all
+    notify_with:
+    - gpc_app_site
+    renderer:
+      module_name: custom_data_docs.renderers.custom_slack_renderer
+      class_name: CustomSlackRenderer
 evaluation_parameters: {}
 runtime_configuration: {}
 validations:
-  - batch_request:
-      datasource_name: BigQuery_datasource
-      data_connector_name: default_runtime_data_connector_name
-      data_asset_name: eprod_public.tbl_product
-      runtime_parameters:
-        query: select *, trim(lower(name)) parsed_name from eprod_public.tbl_product
-          where deleted_at is null
-      batch_identifiers:
-        default_identifier_name: runtime_product_data
-    expectation_suite_name: eproc_bq_expec_tbl_product_runtime
-  - batch_request:
-      datasource_name: BigQuery_datasource
-      data_connector_name: default_inferred_data_connector_name
-      data_asset_name: eprod_public.tbl_product
-      data_connector_query:
-        index: -1
-    expectation_suite_name: eproc_bq_expec_tbl_product
-  - batch_request:
-      datasource_name: BigQuery_datasource
-      data_connector_name: default_inferred_data_connector_name
-      data_asset_name: eprod_public.tbl_address_breakdown
-      data_connector_query:
-        index: -1
-    expectation_suite_name: eproc_bq_expec_tbl_address_breakdown
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_runtime_data_connector_name
+    data_asset_name: eprod_public.tbl_product
+    runtime_parameters:
+      query: select *, trim(lower(name)) parsed_name from eprod_public.tbl_product
+        where deleted_at is null
+    batch_identifiers:
+      default_identifier_name: runtime_request_for_tbl_product
+  expectation_suite_name: eproc_bq_expec_tbl_product_runtime
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_product
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_product
+  expectation_suite_name: eproc_bq_expec_tbl_product
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_city
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_city
+  expectation_suite_name: eproc_bq_expec_tbl_city
 profilers: []
 ge_cloud_id:
 expectation_suite_ge_cloud_id:

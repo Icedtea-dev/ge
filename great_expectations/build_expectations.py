@@ -4,6 +4,7 @@ import configparser
 import json
 from collections import defaultdict
 from eprocurement_tables import replace_list
+import yaml, ruamel.yaml
 
 config = configparser.ConfigParser()
 config.read('./config.cfg')
@@ -75,6 +76,7 @@ def regex_m(input_str):
         return("STRING")
 
 
+#Json
 def dump_json(path,file):
     with open(path,"w") as f:
         json.dump(file,f)
@@ -83,7 +85,18 @@ def dump_json(path,file):
 def load_json(path):
     with open(path,"r") as f:  
         return json.load(f)
+    
 
+#Yaml
+def dump_yaml(path,file):
+    with open(path,"w") as f:
+       ruamel.yaml.round_trip_dump(file, f)
+    print("Done !!!")
+
+def load_yaml(path):
+    with open(path,"r") as f:  
+        return yaml.safe_load(f)
+    
 
 # dump_json("./src_dtypes.json",get_src_dtypes_from_postgres("public",None,"DB",True))
 
@@ -109,4 +122,63 @@ def get_src_dtypes_from_postgres(schema_name,tbl_name,db_conn_name):
     return schema_dict
 
 
-                
+
+def build_expectations_suite(tbl_name,suite,schema_info, ExpectationConfiguration, runtime=False):
+    #Working on the product table
+    if tbl_name == "tbl_product" and runtime == True:
+        expectation_configuration = ExpectationConfiguration(
+            expectation_type = "expect_column_values_to_be_unique",
+            kwargs =  {
+                "column": "parsed_name",
+                "mostly": 1
+                  })
+        suite.add_expectation(expectation_configuration=expectation_configuration)
+
+        expectation_configuration = ExpectationConfiguration(
+            expectation_type = "expect_column_values_to_not_be_null",
+            kwargs =  {
+                "column": "parsed_name",
+                "mostly": 1
+                  })
+        suite.add_expectation(expectation_configuration=expectation_configuration)
+    
+        return 
+    
+    # 1. Unique columns
+    if 'id' in schema_info:
+        expectation_configuration = ExpectationConfiguration(
+            expectation_type = "expect_column_values_to_be_unique",
+            kwargs =  {
+                "column": "id",
+                "mostly": 1
+                  })
+        suite.add_expectation(expectation_configuration=expectation_configuration)
+
+
+    #2. Matching data types
+    if len(schema_info)> 0:
+        # print(f"Table name: {tbl_name} \n schema_info: {schema_info}")
+        if tbl_name in replace_list:
+            temp_schema = replace_list.get(tbl_name)
+            schema_info = {temp_schema.get(k,k):v for k,v in schema_info.items()}
+
+        for col_name,col_type in schema_info.items():
+            expectation_configuration = ExpectationConfiguration(
+                expectation_type = "expect_column_values_to_be_of_type",
+                kwargs =  {
+                "column": col_name,
+                "type_": col_type,
+                "mostly": 1
+                }
+                )
+            suite.add_expectation(expectation_configuration=expectation_configuration)
+
+    # 3.Tables in the data warehouse should have the same number of columns as their 
+    # corresponding tables in the database to ensure consistency.
+    expectation_configuration = ExpectationConfiguration(
+        expectation_type = "expect_table_columns_to_match_set",
+        kwargs =  {"column_set": list(schema_info.keys()),
+                   "exact_match": True,
+                   "mostly": 1}
+                   )  
+    suite.add_expectation(expectation_configuration=expectation_configuration)
