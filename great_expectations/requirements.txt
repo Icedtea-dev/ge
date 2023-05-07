@@ -4,3 +4,18 @@ ruamel.yaml
 urllib3==1.26.15
 great_expectations[gcp]
 
+# ERROR: google-cloud-aiplatform 1.19.0 has requirement google-cloud-bigquery<3.0.0dev,>=1.15.0, but you'll have google-cloud-bigquery 3.5.0 which is incompatible.
+# ERROR: google-ads 19.0.0 has requirement google-api-core==2.10.1, but you'll have google-api-core 2.11.0 which is incompatible.
+# ERROR: google-ads 19.0.0 has requirement protobuf>=4.21.5, but you'll have protobuf 3.19.6 which is incompatible.
+# ERROR: great-expectations 0.16.11 has requirement ruamel.yaml<0.17.18,>=0.16, but you'll have ruamel-yaml 0.17.24 which is incompatible.
+
+
+
+
+# pandas-gbq 0.18.0 has requirement google-cloud-bigquery!=2.4.*,<4.0.0dev,>=3.3.5, but you have google-cloud-bigquery 2.34.4.
+# grpcio-status 1.50.0 has requirement protobuf>=4.21.6, but you have protobuf 3.19.6.
+# great-expectations 0.16.11 has requirement ruamel.yaml<0.17.18,>=0.16, but you have ruamel-yaml 0.17.24.
+# google-ads 19.0.0 has requirement google-api-core==2.10.1, but you have google-api-core 2.11.0.
+# google-ads 19.0.0 has requirement protobuf>=4.21.5, but you have protobuf 3.19.6.
+# gcloud-aio-auth 4.0.1 has requirement cryptography<37.0.0,>=2.0.0, but you have cryptography 38.0.3.
+
