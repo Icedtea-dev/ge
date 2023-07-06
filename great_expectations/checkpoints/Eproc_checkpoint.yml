@@ -22,7 +22,7 @@ action_list:
   action:
     class_name: SlackNotificationAction
     slack_webhook: ${validation_notification_slack_webhook}
-    notify_on: all
+    notify_on: failure
     notify_with:
     - gpc_app_site
     renderer:
@@ -31,6 +31,23 @@ action_list:
 evaluation_parameters: {}
 runtime_configuration: {}
 validations:
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_runtime_data_connector_name
+    data_asset_name: eprod_public.tbl_product
+    runtime_parameters:
+      query: select *, trim(lower(name)) parsed_name from eprod_public.tbl_product
+        where deleted_at is null
+    batch_identifiers:
+      default_identifier_name: runtime_request_for_tbl_product
+  expectation_suite_name: eproc_bq_expec_tbl_product_runtime
+- batch_request:
+    datasource_name: BigQuery_datasource
+    data_connector_name: default_inferred_data_connector_name
+    data_asset_name: eprod_public.tbl_product
+    batch_spec_passthrough:
+      name: batch_request_for_tbl_product
+  expectation_suite_name: eproc_bq_expec_tbl_product
 - batch_request:
     datasource_name: BigQuery_datasource
     data_connector_name: default_inferred_data_connector_name
@@ -395,23 +412,6 @@ validations:
     batch_spec_passthrough:
       name: batch_request_for_tbl_pickup_source
   expectation_suite_name: eproc_bq_expec_tbl_pickup_source
-- batch_request:
-    datasource_name: BigQuery_datasource
-    data_connector_name: default_runtime_data_connector_name
-    data_asset_name: eprod_public.tbl_product
-    runtime_parameters:
-      query: select *, trim(lower(name)) parsed_name from eprod_public.tbl_product
-        where deleted_at is null
-    batch_identifiers:
-      default_identifier_name: runtime_request_for_tbl_product
-  expectation_suite_name: eproc_bq_expec_tbl_product_runtime
-- batch_request:
-    datasource_name: BigQuery_datasource
-    data_connector_name: default_inferred_data_connector_name
-    data_asset_name: eprod_public.tbl_product
-    batch_spec_passthrough:
-      name: batch_request_for_tbl_product
-  expectation_suite_name: eproc_bq_expec_tbl_product
 - batch_request:
     datasource_name: BigQuery_datasource
     data_connector_name: default_inferred_data_connector_name

@@ -51,30 +51,30 @@ datasources:
   #       drivername: postgresql
   #     module_name: great_expectations.execution_engine
   BigQuery_datasource:
-    class_name: Datasource
     data_connectors:
       default_runtime_data_connector_name:
+        batch_spec_passthrough:
+          create_temp_table: false
+        class_name: RuntimeDataConnector
         name: default_runtime_data_connector_name
         batch_identifiers:
           - default_identifier_name
-        class_name: RuntimeDataConnector
         module_name: great_expectations.datasource.data_connector
-        batch_spec_passthrough: 
-          create_temp_table: False
       default_inferred_data_connector_name:
-        name: default_inferred_data_connector_name
+        batch_spec_passthrough:
+          create_temp_table: false
         introspection_directives:
           schema_name: eprod_public
-        batch_spec_passthrough: 
-          create_temp_table: False
-        class_name: InferredAssetSqlDataConnector
-        module_name: great_expectations.datasource.data_connector
         include_schema_name: true
-    module_name: great_expectations.datasource
+        class_name: InferredAssetSqlDataConnector
+        name: default_inferred_data_connector_name
+        module_name: great_expectations.datasource.data_connector
+    class_name: Datasource
     execution_engine:
       class_name: SqlAlchemyExecutionEngine
-      connection_string: bigquery://${GCP_PROJECT}/${BIGQUERY_DATASET}
       module_name: great_expectations.execution_engine
+      connection_string: bigquery://${GCP_PROJECT}/${BIGQUERY_DATASET}
+    module_name: great_expectations.datasource
 config_variables_file_path: uncommitted/config_variables.yml
 
 # The plugins_directory will be added to your python path for custom modules
@@ -148,3 +148,14 @@ data_docs_sites:
     site_index_builder:
       class_name: DefaultSiteIndexBuilder
 
+fluent_datasources:
+  my_pandas_datasource:
+    type: pandas
+anonymous_usage_statistics:
+  data_context_id: 581f5b86-6773-4d54-bd3c-54bfd414e3ce
+  enabled: true
+notebooks:
+include_rendered_content:
+  globally: false
+  expectation_suite: false
+  expectation_validation_result: false

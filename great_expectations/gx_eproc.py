@@ -69,6 +69,7 @@ for dataset in available_data_asset_names:
 
     rebuild_specific_tbl_expectations = False
     if  tbl_name not in tuple(run_time_schema.keys()):continue  #e.g tbl_product_price_trends_deduplicated
+    
     # if  not tbl_name  in ["tbl_product"]: continue
 
 #     if rebuild_expectations:
